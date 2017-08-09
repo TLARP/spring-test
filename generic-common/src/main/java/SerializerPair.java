@@ -1,9 +1,5 @@
 import com.alibaba.fastjson.serializer.ObjectSerializer;
 
-/**
- * @author hzwangyuantao
- * @since 2015/10/10
- */
 public class SerializerPair {
     private Class<?> clazz;
     private ObjectSerializer objectSerializer;

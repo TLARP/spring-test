@@ -10,12 +10,6 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.*;
 
-/**
- * 基于fastjson的工具类 com.netease.haitao.core.json.FastJsonUtilTest
- *
- * @author hzwangyuantao
- * @since 2015/10/10
- */
 public final class FastJsonUtil {
     private FastJsonUtil() {
     }
