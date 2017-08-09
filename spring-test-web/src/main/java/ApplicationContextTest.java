@@ -1,3 +1,5 @@
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class ApplicationContextTest {
     public static void main(String[] args) {
+        Log log = LogFactory.getLog(ApplicationContextTest.class);
         ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"classpath:application-context.xml"});
-        System.out.println(FastJsonUtil.toJSONString(ctx.getBeanDefinitionNames()));
     }
 }

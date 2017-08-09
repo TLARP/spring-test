@@ -47,6 +47,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
         </dependency>
+        <!--使用log4j进行输出-->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
