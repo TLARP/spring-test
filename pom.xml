@@ -7,6 +7,51 @@
     <groupId>com.netease.kaola</groupId>
     <artifactId>spring-test</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
+    <description>Test project</description>
 
+    <properties>
+        <spring.version>4.2.2.RELEASE</spring.version>
+    </properties>
+
+    <!--声明依赖的版本号，后续依赖不需要再指定版本号-->
+    <dependencyManagement>
+        <dependencies>
+            <!--spring物料清单,后续的spring依赖都不需要指定版本号统一声明-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--日志依赖-->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.14</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-jcl</artifactId>
+                <version>2.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.28</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>2.6</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
