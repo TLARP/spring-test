@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.netease.kaola.generic.provider.mapper.mysql.TestMapper">
+    <resultMap id="TestPO" type="com.netease.kaola.generic.api.model.TestPO">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="base_column">
+        id,name
+    </sql>
+
+    <select id="getTestbyId" resultMap="TestPO">
+        SELECT  * from spring_test_account where id=#{id}
+    </select>
+
+    <insert id="insertTest">
+        INSERT INTO spring_test_account
+        (<include refid="base_column"/>)
+        VALUES (#{id},#{name})
+    </insert>
+
+    <delete id="deleteTestById">
+        delete from spring_test_account where id=#{id}
+    </delete>
+
+    <update id="deleteTestById">
+        UPDATE spring_test_account
+        <set>
+            <if test="name!=null">
+                name=#{name}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>

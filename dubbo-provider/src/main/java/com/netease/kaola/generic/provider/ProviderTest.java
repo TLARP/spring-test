@@ -1,6 +1,5 @@
-package com.netease.kaola;
+package com.netease.kaola.generic.provider;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;

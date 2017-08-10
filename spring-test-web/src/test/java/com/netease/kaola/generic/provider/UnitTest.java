@@ -1,6 +1,6 @@
-package com.netease.kaola;
+package com.netease.kaola.generic.provider;
 
-import com.netease.kaola.base.BaseTest;
+import com.netease.kaola.generic.provider.base.BaseTest;
 import org.junit.Test;
 
 import javax.annotation.Resource;

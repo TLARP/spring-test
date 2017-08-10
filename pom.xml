@@ -11,6 +11,11 @@
 
     <description>Test project</description>
 
+    <modules>
+        <module>dubbo-provider</module>
+        <module>generic-common</module>
+        <module>generic-provider</module>
+    </modules>
     <properties>
         <spring.version>4.2.2.RELEASE</spring.version>
     </properties>

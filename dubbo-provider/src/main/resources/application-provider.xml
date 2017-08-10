@@ -21,5 +21,5 @@
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!-- 和本地bean一样实现服务 -->
-    <dubbo:service interface="com.netease.kaola.HelloCompose" ref="helloCompose"/>
+    <dubbo:service interface="com.netease.kaola.generic.provider.HelloCompose" ref="helloCompose"/>
 </beans>

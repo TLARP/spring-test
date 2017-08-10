@@ -1,4 +1,4 @@
-package com.netease.kaola.base;
+package com.netease.kaola.generic.provider.base;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

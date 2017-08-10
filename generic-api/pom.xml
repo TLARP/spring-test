@@ -6,9 +6,8 @@
 
     <!--独立模块-->
     <groupId>com.netease.kaola</groupId>
-    <artifactId>dubbo-api</artifactId>
+    <artifactId>generic-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>

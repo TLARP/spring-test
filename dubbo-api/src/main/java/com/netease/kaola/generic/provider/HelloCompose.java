@@ -1,4 +1,4 @@
-package com.netease.kaola;
+package com.netease.kaola.generic.provider;
 
 /**
  * Created by hzwangqiqing
