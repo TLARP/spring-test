@@ -9,7 +9,10 @@
 
     <dubbo:application name="dubbo-consumer"/>
 
-    <dubbo:registry address="multicast://224.5.6.7:1234"/>
+    <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+
+    <!--使用zookeeper作为服务发现的地址-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2881"/>
 
     <dubbo:reference interface="com.netease.kaola.HelloCompose" id="helloCompose" check="false"/>
 </beans>
