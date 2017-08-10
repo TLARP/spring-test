@@ -1,6 +1,6 @@
+import com.netease.kaola.HelloCompose;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,6 +10,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ApplicationContextTest {
     public static void main(String[] args) {
         Log log = LogFactory.getLog(ApplicationContextTest.class);
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"classpath:application-context.xml"});
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"classpath:application-context.xml"});
+        ctx.start();
+        HelloCompose helloCompose = ctx.getBean(HelloCompose.class);
+        if (helloCompose == null) {
+            log.error("get bean error!");
+            return;
+        }
+        log.warn(helloCompose.sayHello());
     }
 }

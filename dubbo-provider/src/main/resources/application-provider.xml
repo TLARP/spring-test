@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+           http://code.alibabatech.com/schema/dubbo http://dubbok.hz.netease.com/dubbo.xsd">
+
+    <!--xsd文件一般都在目录下面,没有的时候会从网络下载-->
+    <!--spring支持schema扩展，实现自定义标签解析bean{@link spring.handlers}-->
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="dubbo-provider"/>
+
+    <!-- 使用multicast广播注册中心暴露服务地址,TODO换成自己的zk地址-->
+    <dubbo:registry address="multicast://224.5.6.7:1234"/>
+
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 和本地bean一样实现服务 -->
+    <dubbo:service interface="com.netease.kaola.HelloCompose" ref="helloCompose"/>
+</beans>

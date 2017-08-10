@@ -11,20 +11,35 @@
     </parent>
 
     <groupId>com.netease.kaola</groupId>
-    <artifactId>spring-test-web</artifactId>
+    <artifactId>dubbo-provider</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>com.netease.kaola</groupId>
-            <artifactId>generic-common</artifactId>
+            <artifactId>dubbo-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.netease.kaola</groupId>
-            <artifactId>dubbo-api</artifactId>
+            <artifactId>generic-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <!--下面的语言等级可以保证idea的语言等级不会自动变更-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
