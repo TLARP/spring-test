@@ -17,10 +17,4 @@ public class TestController {
     public String page() {
         return "page";
     }
-
-    public static void main(String[] args) {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"classpath*:application-context.xml"});
-        HelloCompose helloCompose = ctx.getBean(HelloCompose.class);
-        System.out.println(helloCompose.sayHello());
-    }
 }
