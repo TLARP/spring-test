@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>com.netease.kaola</groupId>
-            <artifactId>generic-common</artifactId>
+            <artifactId>dubbo-provider</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

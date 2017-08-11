@@ -24,7 +24,7 @@
         delete from spring_test_account where id=#{id}
     </delete>
 
-    <update id="deleteTestById">
+    <update id="updateTestBySelective">
         UPDATE spring_test_account
         <set>
             <if test="name!=null">

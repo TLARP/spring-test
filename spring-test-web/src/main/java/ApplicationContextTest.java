@@ -3,12 +3,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.io.IOException;
+
 /**
  * Created by hzwangqiqing
  * on 2017/8/9.
  */
 public class ApplicationContextTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Log log = LogFactory.getLog(ApplicationContextTest.class);
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(new String[]{"classpath:application-context.xml"});
         ctx.start();
@@ -18,5 +20,6 @@ public class ApplicationContextTest {
             return;
         }
         log.warn(helloCompose.sayHello());
+        System.in.read();
     }
 }
