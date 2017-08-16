@@ -4,3 +4,4 @@ target/
 *.log
 spring-test.iml
 *.jar
+out/
