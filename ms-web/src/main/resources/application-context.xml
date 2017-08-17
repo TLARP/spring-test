@@ -16,7 +16,9 @@
     <import resource="classpath*:application-consumer.xml"/>
     <!--这个是为了支持纯mybatis访问-->
     <import resource="classpath*:mybatis.xml"/>
-    <!--spring mvc相关的一些配置-->
+    <!--spring-mvc-dataconvert的一些配置-->
     <import resource="classpath*:spring-converer.xml"/>
+    <!--spring-mvc-accesscontrol-->
+    <import resource="classpath*:spring-mvc.xml"/>
 </beans>
 

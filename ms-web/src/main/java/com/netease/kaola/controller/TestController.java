@@ -1,5 +1,6 @@
 package com.netease.kaola.controller;
 
+import com.netease.kaola.threadlocal.UserDataThreadlocal;
 import com.netease.kaola.vo.TestVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ public class TestController {
     @RequestMapping("/page")
     @ResponseBody
     public String page() {
-        return "page";
+        return "当前的登录账户;" + UserDataThreadlocal.getUserName() + "/" + UserDataThreadlocal.getId();
     }
 
 
