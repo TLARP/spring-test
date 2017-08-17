@@ -106,5 +106,10 @@
             <groupId>javax</groupId>
             <artifactId>javaee</artifactId>
         </dependency>
+        <!-- User agent jar -->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+        </dependency>
     </dependencies>
 </project>

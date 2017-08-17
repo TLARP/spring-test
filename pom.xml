@@ -109,6 +109,12 @@
                 <artifactId>javaee</artifactId>
                 <version>5.0</version>
             </dependency>
+            <!-- User agent jar -->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>1.18</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
