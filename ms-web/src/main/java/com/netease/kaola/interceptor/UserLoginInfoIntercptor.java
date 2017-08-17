@@ -17,10 +17,10 @@ public class UserLoginInfoIntercptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         UserVO userVO = new UserVO();
-        userVO.setUserName((String) httpServletRequest.getAttribute("userName"));
-        userVO.setId((Long) httpServletRequest.getAttribute("id"));
+        userVO.setUserName(httpServletRequest.getParameter("userName"));
+        userVO.setId(new Long(httpServletRequest.getParameter("id")));
         UserDataThreadlocal.threadLocal.set(userVO);
-        return false;
+        return true;
     }
 
     @Override
