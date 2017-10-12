@@ -1,5 +1,7 @@
 package com.netease.kaola.designpattern.factory.samplefactory;
 
+import com.netease.kaola.designpattern.factory.Car;
+
 /**
  * Created by hzwangqiqing
  * on 2017/10/12.

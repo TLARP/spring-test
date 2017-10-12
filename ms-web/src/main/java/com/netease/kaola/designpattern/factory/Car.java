@@ -1,4 +1,4 @@
-package com.netease.kaola.designpattern.factory.samplefactory;
+package com.netease.kaola.designpattern.factory;
 
 /**
  * Created by hzwangqiqing
