@@ -11,8 +11,8 @@
 
     <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
 
-    <!--使用zookeeper作为服务发现的地址-->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <!-- 使用multicast广播注册中心暴露发现服务地址 -->
+    <dubbo:registry address="multicast://224.5.6.7:1234" />
 
     <dubbo:reference interface="com.netease.kaola.generic.provider.HelloCompose" id="helloCompose" check="false"/>
 </beans>
