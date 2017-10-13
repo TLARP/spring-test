@@ -102,6 +102,10 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee</artifactId>
+        </dependency>
         <!-- User agent jar -->
         <dependency>
             <groupId>eu.bitwalker</groupId>
