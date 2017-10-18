@@ -1,11 +1,13 @@
 package com.netease.kaola.controller;
 
+import com.netease.kaola.generic.provider.HelloCompose;
 import com.netease.kaola.threadlocal.UserDataThreadlocal;
 import com.netease.kaola.vo.TestVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -18,9 +20,13 @@ import java.util.Map;
 @RequestMapping("/spring-test")
 @Controller
 public class TestController {
+    @Resource
+    private HelloCompose helloCompose;
+
     @RequestMapping("/page")
     @ResponseBody
     public String page() {
+        helloCompose.sayHello();
         return "当前的登录账户;" + UserDataThreadlocal.getUserName() + "/" + UserDataThreadlocal.getId();
     }
 
