@@ -2,6 +2,8 @@ package com.netease.kaola.generic.provider.mapper.mysql;
 
 import com.netease.kaola.generic.api.model.TestPO;
 
+import java.util.List;
+
 /**
  * Created by hzwangqiqing
  * on 2017/8/10.

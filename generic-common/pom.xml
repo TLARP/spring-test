@@ -106,6 +106,10 @@
             <groupId>javax</groupId>
             <artifactId>javaee</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
         <!-- User agent jar -->
         <dependency>
             <groupId>eu.bitwalker</groupId>
