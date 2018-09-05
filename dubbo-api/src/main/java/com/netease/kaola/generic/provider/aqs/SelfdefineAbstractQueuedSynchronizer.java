@@ -694,12 +694,15 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
      * @param propagate 传播属性
      */
     private void setHeadAndPropagate(Node node, int propagate) {
+        //记录当前头结点
         Node h = head;
+        //设置头结点
         setHead(head);
         //咩看懂
         if (propagate > 0 || h == null || h.waitStatus < 0) {
             Node s = node.next;
             if (s == null || s.isShared())
+                //TODO 该方法确保设置头是安全执行的
                 doReleaseShared();
         }
     }
