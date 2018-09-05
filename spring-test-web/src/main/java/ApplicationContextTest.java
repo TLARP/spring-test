@@ -19,7 +19,6 @@ public class ApplicationContextTest {
             log.error("get bean error!");
             return;
         }
-        log.warn(helloCompose.sayHello());
         System.in.read();
     }
 }

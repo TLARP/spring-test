@@ -1,7 +1,5 @@
 package com.netease.kaola.generic.provider.thread;
 
-import static java.lang.Thread.*;
-
 /**
  * Created by hzwangqiqing
  * on 2018/8/7.
@@ -9,17 +7,15 @@ import static java.lang.Thread.*;
 public class InteruptTest {
 
     public static void main(String[] args) {
+
         final Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true) {
-                    System.out.println("gekki");
-                    try {
-                        sleep(3000L);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                System.out.println("线程执行了");
+                for (Integer i = 0; i < 100; i++) {
+                    System.out.println(i);
                 }
+                System.out.println("线程执行完毕" + Thread.currentThread().isInterrupted());
             }
         });
 

@@ -105,9 +105,9 @@
                 <version>2.6.5</version>
             </dependency>
             <dependency>
-                <groupId>javax</groupId>
-                <artifactId>javaee</artifactId>
-                <version>5.0</version>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
             </dependency>
             <!-- User agent jar -->
             <dependency>

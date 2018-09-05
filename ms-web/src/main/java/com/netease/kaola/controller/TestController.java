@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.lang.Thread;
 
 /**
  * Created by hzwangqiqing
@@ -21,13 +20,15 @@ import java.lang.Thread;
 @RequestMapping("/spring-test")
 @Controller
 public class TestController {
+
     @Resource
     private HelloCompose helloCompose;
 
     @RequestMapping("/page")
     @ResponseBody
     public String page() {
-        helloCompose.sayHello();
+        List<String> accountIdList = Arrays.asList("q_test163.com");
+        helloCompose.sayHello(accountIdList.subList(0, 1));
         return "当前的登录账户;" + UserDataThreadlocal.getUserName() + "/" + UserDataThreadlocal.getId();
     }
 

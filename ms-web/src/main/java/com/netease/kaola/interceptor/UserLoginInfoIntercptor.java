@@ -1,3 +1,4 @@
+/*
 package com.netease.kaola.interceptor;
 
 import com.netease.kaola.threadlocal.UserDataThreadlocal;
@@ -8,10 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+*/
 /**
  * Created by hzwangqiqing
  * on 2017/8/17.
- */
+ *//*
+
 public class UserLoginInfoIntercptor implements HandlerInterceptor {
 
     @Override
@@ -33,3 +36,4 @@ public class UserLoginInfoIntercptor implements HandlerInterceptor {
 
     }
 }
+*/

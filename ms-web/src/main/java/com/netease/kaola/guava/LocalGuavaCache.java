@@ -1,9 +1,12 @@
+/*
 package com.netease.kaola.guava;
 
+*/
 /**
  * Created by hzwangqiqing
  * on 2017/10/27.
- */
+ *//*
+
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -14,10 +17,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+*/
 /**
  * @author hzyouzhangfeng.
  * @date 2017/9/29.
- */
+ *//*
+
 @Component
 public class LocalGuavaCache {
 
@@ -27,7 +32,9 @@ public class LocalGuavaCache {
 
     private static final int MAX_SIZE = 100000;
 
-    /* 初始化 */
+    */
+/* 初始化 *//*
+
     static {
         localListAdCache = CacheBuilder
                 .newBuilder()
@@ -52,3 +59,4 @@ public class LocalGuavaCache {
                 });
     }
 }
+*/

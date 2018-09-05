@@ -5,8 +5,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                  http://www.springframework.org/schema/beans/spring-beans-4.2.xsd   http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--拦截器配置-->
-    <mvc:interceptors>
-        <bean class="com.netease.kaola.interceptor.UserLoginInfoIntercptor"/>
-    </mvc:interceptors>
+
 </beans>

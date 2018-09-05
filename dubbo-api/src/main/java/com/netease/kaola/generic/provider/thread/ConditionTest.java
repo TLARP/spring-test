@@ -45,6 +45,7 @@ public class ConditionTest {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
+                    System.out.println("线程3捕获异常退出");
                     lock.unlock();
                 }
             }

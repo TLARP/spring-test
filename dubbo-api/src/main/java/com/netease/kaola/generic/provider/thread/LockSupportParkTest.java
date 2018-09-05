@@ -16,7 +16,6 @@ public class LockSupportParkTest {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                LockSupport.unpark(thread);
             }
         }).start();
         LockSupport.park(thread);

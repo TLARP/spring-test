@@ -1,3 +1,4 @@
+/*
 package com.netease.kaola.guava;
 
 import lombok.Data;
@@ -9,10 +10,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+*/
 /**
  * Created by hzwangqiqing
  * on 2017/10/27.
- */
+ *//*
+
 @Data
 public class Ad implements Serializable{
 
@@ -44,3 +47,4 @@ public class Ad implements Serializable{
 
     }
 }
+*/
