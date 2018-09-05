@@ -249,7 +249,7 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
     }
 
     /**
-     * 在指定时间内获取锁，超时自动取消
+     * fixme 在指定时间内获取锁，超时自动取消
      *
      * @param arg          独占资源数
      * @param nanosTimeout 超时纳秒数
@@ -262,7 +262,7 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
     }
 
     /**
-     * 共享模式获取的模板方法
+     * fixme 共享模式获取的模板方法
      *
      * @param arg 获取参数
      */
@@ -272,6 +272,25 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
             doAcquireShared(arg);
     }
 
+    //fixme 独占模式下的锁释放
+    public final boolean release(int arg) {
+        if (tryRelease(arg)) {
+            Node h = head;
+            if (h != null && h.waitStatus != 0)
+                unparkSuccessor(h);
+            return true;
+        }
+        return false;
+    }
+
+    //释放共享锁的模板方法模式
+    public final boolean releaseShared(int arg) {
+        if (tryReleaseShared(arg)) {
+            doReleaseShared();
+            return true;
+        }
+        return false;
+    }
     /*******************************************************************************************************************
      * 自旋
      *******************************************************************************************************************/
@@ -667,16 +686,6 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
     }
 
 
-    //fixme 独占模式下的锁释放
-    public final boolean release(int arg) {
-        if (tryRelease(arg)) {
-            Node h = head;
-            if (h != null && h.waitStatus != 0)
-                unparkSuccessor(h);
-            return true;
-        }
-        return false;
-    }
 
     /**
      * 设置共享模式下的头结点
@@ -693,15 +702,6 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
             if (s == null || s.isShared())
                 doReleaseShared();
         }
-    }
-
-    //释放共享锁的模板方法模式
-    public final boolean releaseShared(int arg) {
-        if (tryReleaseShared(arg)) {
-            doReleaseShared();
-            return true;
-        }
-        return false;
     }
 
     /**
