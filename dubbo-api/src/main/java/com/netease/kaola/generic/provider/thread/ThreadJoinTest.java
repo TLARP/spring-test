@@ -25,6 +25,7 @@ public class ThreadJoinTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            while (true)
             System.out.println("接受到通知");
         }
     }

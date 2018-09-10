@@ -291,6 +291,7 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
         }
         return false;
     }
+
     /*******************************************************************************************************************
      * 自旋
      *******************************************************************************************************************/
@@ -686,7 +687,6 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
     }
 
 
-
     /**
      * 设置共享模式下的头结点
      *
@@ -697,7 +697,7 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
         //记录当前头结点
         Node h = head;
         //设置头结点
-        setHead(head);
+        setHead(node);
         //咩看懂
         if (propagate > 0 || h == null || h.waitStatus < 0) {
             Node s = node.next;
@@ -737,6 +737,21 @@ public abstract class SelfdefineAbstractQueuedSynchronizer implements Serializab
             if (h == head)                   // loop if head changed
                 break;
         }
+    }
+
+    /**
+     * 判断是否有前驱节点正在等待锁
+     * true -有等待节点
+     * false-没有等待节点
+     * 1）fixme 如果头和尾巴一样说明只有一个头结点，那么队列就为空
+     * 2) fixme 如果头结点的一个节点为空，如果都节点的一个节点为空也不允许插入
+     * 3) fixme 如果不为空且不是当前线程也不允许插入
+     */
+    public final boolean hasQueuedPredecessors() {
+        Node t = tail;
+        Node h = head;
+        Node s;
+        return h != t && (((s = h.next) == null) || s.thread != Thread.currentThread());
     }
     /*******************************************************************************************************************/
 }
