@@ -24,6 +24,7 @@ public class ConditionTest {
                 }
                 reentrantLock.lock();
                 condition.signal();
+                //fixme 可以想一下这么写unlock会不会触发什么问题？
                 reentrantLock.unlock();
                 System.out.println("线程通知完成!");
             }
