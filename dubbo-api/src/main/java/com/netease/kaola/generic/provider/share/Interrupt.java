@@ -5,6 +5,8 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * Created by hzwangqiqing
  * on 2018/9/10.
+ * fixme java线程的停止都是依靠协调而不是依靠强制,比如java线程池的关闭操作根本就不是把线程停掉而是触发中断信号
+ * fixme 强制停止线程是安全的容易造成数据不一致，所以这些方法都已经过时
  */
 public class Interrupt {
     public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class Interrupt {
                 Integer i = 0;
                 while (true) {
                     //System.out.println("this thred is always run!");
-                    //判断当前状态是否
+                    //fixme 下面是我们会用到的几个中断函数
                     if (Thread.currentThread().isInterrupted()) {
                         //改方法会返回当前是否中断
                         System.out.println(Thread.currentThread().isInterrupted());

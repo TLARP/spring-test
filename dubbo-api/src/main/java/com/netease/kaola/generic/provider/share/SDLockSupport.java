@@ -6,6 +6,7 @@ import java.util.concurrent.locks.LockSupport;
  * Created by hzwangqiqing
  * on 2018/9/10.
  * fixme unpark的特点就是先唤醒在停车也照样可以运行
+ * fixme  你可以使用jstatck看看对应线程的状态稍微吧下面的sleep时间搞长一点或者把park注释掉
  */
 public class SDLockSupport {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class SDLockSupport {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Thread.currentThread().setName("lockSupport.unpark线程");
                 LockSupport.unpark(mainThread);
                 System.out.println("唤醒主线程成功!");
             }

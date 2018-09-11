@@ -6,6 +6,8 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by hzwangqiqing
  * on 2018/9/10.
+ * fixme Condition可以理解成一个FIFO的单向链表主要是为了存储等待线程
+ * fixme 可以看下下面Condition的构造形式，猜测一下下面的Condition实现类和对应的可重入锁是什么关系？
  */
 public class ConditionTest {
     static ReentrantLock reentrantLock = new ReentrantLock();
