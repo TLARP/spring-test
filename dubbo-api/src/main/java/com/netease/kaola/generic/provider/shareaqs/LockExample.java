@@ -7,6 +7,7 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * Created by hzwangqiqing
  * on 2018/9/10.
+ * fixme 看了下面的例子，可以想一下如何去实现futureTask相同的功能
  */
 public class LockExample {
     //四个线程都达到了，主线程可以做对应的事情
