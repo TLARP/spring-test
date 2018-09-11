@@ -33,8 +33,11 @@ public class SynchronizedMethodTest {
 
     private static class InnnerClasss {
         public synchronized void sayHello() {
-            System.out.println("hello world 这里一个同步方法,执行通知操作！");
-            this.notify();
+            //fixme 这里加一碗迷魂汤
+            synchronized (this){
+                System.out.println("hello world 这里一个同步方法,执行通知操作！");
+                this.notify();
+            }
         }
     }
 }
