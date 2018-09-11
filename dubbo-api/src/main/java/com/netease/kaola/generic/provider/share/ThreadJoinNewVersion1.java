@@ -6,8 +6,9 @@ import java.lang.management.RuntimeMXBean;
 /**
  * Created by hzwangqiqing
  * on 2018/9/10.
+ * //fixme 通过运行结果你能猜出什么？
  */
-public class ThreadJoinNewVersion {
+public class ThreadJoinNewVersion1 {
     public static void main(String[] args) {
         //打印当前进程id(jps命令)->jstatck pid查看对应线程的具体等待信息
         RuntimeMXBean runtimeMXBean = ManagementFactory.getRuntimeMXBean();
