@@ -13,10 +13,12 @@ public class ThreadStatusTest {
     public static void main(String[] args) {
         System.out.println(ManagementFactory.getRuntimeMXBean().getName());
         Thread threadNew = new Thread();
+        threadNew.setName("new Thread");
         System.out.println(threadNew.getName());
 
         final Thread threadRun = new Thread(new Runnable() {
             public void run() {
+                Thread.currentThread().setName("一直运行线程");
                 System.out.printf("thread run%s%n", Thread.currentThread().getName());
                 while (true) ;
             }
@@ -40,6 +42,7 @@ public class ThreadStatusTest {
 
         new Thread(new Runnable() {
             public void run() {
+                Thread.currentThread().setName("阻塞线程");
                 System.out.println("thread block"+Thread.currentThread().getName());
                 synchronized (ThreadStatusTest.class) {
 
@@ -50,6 +53,7 @@ public class ThreadStatusTest {
         new Thread(new Runnable() {
             public void run() {
                 System.out.println("thread wait"+Thread.currentThread().getName());
+                Thread.currentThread().setName("等待线程");
                 synchronized (lock) {
                     try {
                         lock.wait();
@@ -63,6 +67,7 @@ public class ThreadStatusTest {
         new Thread(new Runnable() {
             public void run() {
                 try {
+                    Thread.currentThread().setName("等待超时线程");
                     System.out.println("tHREAD TIME WAIT "+Thread.currentThread().getName());
                     Thread.sleep(10000000L);
                 } catch (InterruptedException e) {

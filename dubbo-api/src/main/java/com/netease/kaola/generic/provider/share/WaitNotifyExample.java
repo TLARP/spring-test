@@ -19,8 +19,9 @@ public class WaitNotifyExample {
         //打印当前进程id(jps命令)->jstatck pid查看对应线程的具体等待信息
         RuntimeMXBean runtimeMXBean = ManagementFactory.getRuntimeMXBean();
         String name = runtimeMXBean.getName();
+        Integer processorNumber=Runtime.getRuntime().availableProcessors();
         System.out.println("当前进程id:" + name.split("@")[0]);
-
+        System.out.println("当前可用处理器个数:"+processorNumber);
 
         new Thread(new Runnable() {
             @Override
