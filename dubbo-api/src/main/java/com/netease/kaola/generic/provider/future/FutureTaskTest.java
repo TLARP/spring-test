@@ -13,27 +13,20 @@ public class FutureTaskTest {
         final FutureTask<String> futureTask = new FutureTask<String>(new Callable<String>() {
             @Override
             public String call() throws Exception {
-                System.out.println(Thread.currentThread().getName());
                 Thread.sleep(3000L);
-                return Thread.currentThread().getName();
+                throw new RuntimeException();
             }
         });
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Thread.currentThread().setName("线程1");
-                System.out.println("线程1运行");
-                futureTask.run();
-                try {
-                    futureTask.get();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("线程1运行完毕");
-            }
-        }).start();
+        futureTask.run();
+
+        try {
+            String value = futureTask.get();
+            System.out.println("value:" + value);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 }

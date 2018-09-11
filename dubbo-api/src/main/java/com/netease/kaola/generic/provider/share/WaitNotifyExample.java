@@ -48,7 +48,7 @@ public class WaitNotifyExample {
             public void run() {
                 Thread.currentThread().setName("线程2");
                 synchronized (obj) {
-                    System.out.println("线程2马上进入等待");
+                    System.out.println("线程2马上进入等待,调用wait方法会使当前代码块释放同步代码块的锁!");
                     try {
                         obj.wait();
                         System.out.println("线程2接受到了通知");
@@ -66,9 +66,9 @@ public class WaitNotifyExample {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        synchronized (obj) {
+        /*synchronized (obj) {
             obj.notify();
             obj.notifyAll();
-        }
+        }*/
     }
 }
