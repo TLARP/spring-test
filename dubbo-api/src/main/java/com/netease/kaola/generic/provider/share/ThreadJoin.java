@@ -25,9 +25,9 @@ public class ThreadJoin {
         });
         thread.start();
 
-        //主线程等待子线程结束后才能返回
         Thread.currentThread().setName("主线程");
         try {
+            //主线程等待子线程结束后才能返回
             thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();

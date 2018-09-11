@@ -1,4 +1,4 @@
-package com.netease.kaola.generic.provider.queue;
+package com.netease.kaola.generic.provider.sharequeue;
 
 import lombok.Data;
 
