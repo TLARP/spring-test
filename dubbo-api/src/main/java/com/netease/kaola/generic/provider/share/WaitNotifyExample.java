@@ -11,6 +11,7 @@ public class WaitNotifyExample {
     static Object obj = new Object();
 
     /**
+     * 等待通知是一种典型的生产者和消费者模式，这种模式便于扩展，例如MQ，商品价格变更消息
      * TODO
      * FIXME 1)多个线程都可以使用synchronized关键字，那么猜一猜你需要什么样的数据结构来存贮这些线程？
      * FIXME 2)如果让我们自己取维护线程和该数据结构的关系，你需要考虑哪些问题？
