@@ -26,6 +26,7 @@ public class WaitNotifyExample {
             @Override
             public void run() {
                 synchronized (obj) {
+                    //给线程取个名字方便你再使用jstatck时快速找到对应线程
                     Thread.currentThread().setName("线程1");
                     try {
                         System.out.println("线程1马上要进入等待状态,调用wait方法会使当前代码块释放同步代码块的锁!");
