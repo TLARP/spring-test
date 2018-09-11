@@ -66,7 +66,7 @@ public class WaitNotifyExample {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //fixme 这里注释掉是为了使用jstack命令时可以看到对应是等待状态，因为一直没收到通知
+        //fixme 这里注释掉是为了使用jstack命令时可以看到对应是等待状态，因为一直没收到通知，跑过之后把注释取消掉再跑一下
         /*synchronized (obj) {
             obj.notify();
             obj.notifyAll();
