@@ -3,7 +3,7 @@ package com.netease.kaola.generic.provider.share;
 /**
  * Created by hzwangqiqing
  * on 2018/9/11.
- * fixme 这里就是为了说明synchronized在方法级别其实就是这里就是synchronized(this)
+ * fixme 这里就是为了说明synchronized在方法级别其实就是这里就是synchronized(this),方便大家快速理解threadjoin的源代码
  */
 public class SynchronizedMethodTest {
     public static void main(String[] args) {
