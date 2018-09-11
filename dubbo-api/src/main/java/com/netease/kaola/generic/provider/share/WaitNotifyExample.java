@@ -70,6 +70,7 @@ public class WaitNotifyExample {
             e.printStackTrace();
         }
         //fixme 这里注释掉是为了使用jstack命令时可以看到对应是等待状态，因为一直没收到通知，跑过之后把注释取消掉再跑一下
+        //fixme 问一下大家这里执行通知之后上面的两个线程是处于什么状态？是否要经历阻塞状态
         /*synchronized (obj) {
             obj.notify();
             obj.notifyAll();
